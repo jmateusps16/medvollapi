@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: api
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/medvollapi
+    username: medvollapi
+    password: medvollapi
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true           # Exibir as queries SQL geradas no console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
