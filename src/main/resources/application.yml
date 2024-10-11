@@ -14,3 +14,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
+
+  data:
+    web:
+      pageable:
+        page-parameter: pagina    # Define o nome do parâmetro de número da página
+        size-parameter: tamanho   # Define o nome do parâmetro de tamanho da página
+      sort:
+        sort-parameter: ordem     # Define o nome do parâmetro de ordenação
