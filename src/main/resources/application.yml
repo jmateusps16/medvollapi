@@ -22,3 +22,7 @@ spring:
         size-parameter: tamanho   # Define o nome do parâmetro de tamanho da página
       sort:
         sort-parameter: ordem     # Define o nome do parâmetro de ordenação
+
+server:
+  error:
+    include-stacktrace: never     # Exibe o stacktrace completo nos erros
