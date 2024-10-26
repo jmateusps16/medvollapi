@@ -30,4 +30,4 @@ server:
 api:
   security:
     token:
-      secret: "MedVol123@"  # Chave Secreta
+      secret: "${API_SECURITY_TOKEN_SECRET:MedVol123@}" # Lê o segredo de uma variável de ambiente se não achar usa a Chave Secreta depois dos :
