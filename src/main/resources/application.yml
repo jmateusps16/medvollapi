@@ -26,3 +26,8 @@ spring:
 server:
   error:
     include-stacktrace: never     # Exibe o stacktrace completo nos erros
+
+api:
+  security:
+    token:
+      secret: "MedVol123@"  # Chave Secreta
