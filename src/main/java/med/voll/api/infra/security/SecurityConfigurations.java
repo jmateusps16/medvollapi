@@ -35,6 +35,10 @@ public class SecurityConfigurations {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize.requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")           // Protege todas as URLs que começam com /admin/
+                        .requestMatchers("/reports/**").hasRole("ADMIN")         // Protege todas as URLs que começam com /reports/
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
 
