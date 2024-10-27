@@ -6,6 +6,7 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import med.voll.api.domain.usuario.Usuario;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -24,6 +25,7 @@ public class TokenService {
             return JWT.create()
                     .withIssuer("Voll.med API")
                     .withSubject(usuario.getLogin())
+                    .withClaim("roles", usuario.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
                     .withExpiresAt(Date.from(dataExpiracao()))
                     .sign(algoritmo());
         } catch (JWTCreationException exception) {
