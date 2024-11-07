@@ -1,6 +1,5 @@
 package med.voll.api.domain.consulta.validacoes.cancelamento;
 
-import med.voll.api.domain.consulta.Consulta;
 import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.DadosCancelamentoConsulta;
 import med.voll.api.domain.exceptions.ValidacaoException;
