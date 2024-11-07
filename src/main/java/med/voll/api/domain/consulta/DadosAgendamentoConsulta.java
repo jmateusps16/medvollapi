@@ -6,8 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record DadosAgendamentoConsulta(
+        //@JsonAlias("id_medico")
         Long idMedico,
 
+        //@JsonAlias("id_paciente")
         @NotNull
         Long idPaciente,
 
