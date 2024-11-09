@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: api
+
+  datasource:
+    url: ${"DATASOURCE_URL"}
+    username: ${"DATASOURCE_USERNAME"}
+    password: ${"DATASOURCE_PASSWORD"}
+
+  jpa:
+    show-sql: false           # Exibir as queries SQL geradas no console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
